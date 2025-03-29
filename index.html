@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 
+        Youtube : Iking Lalusu 
+        Instagram : @iknglalusu_
+        WhatsApp : 081523876963
+        Tiktok : YK
+    -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bukadong</title>
+  <!-- font google -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Montserrat:wght@100;400&family=Press+Start+2P&family=Sedgwick+Ave+Display&family=Ubuntu:wght@300;400;500&family=Viga&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+</head>
+<style>
+  .swal2-title {
+    font-family: "Viga", sans-serif;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px rgba(69, 59, 42, 0.5);
+    color: black;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 30px 0 30px;
+  }
+
+  .swal2-modal {
+    background-image: linear-gradient(to bottom,
+        rgba(69, 101, 114),
+        rgba(69, 59, 42, 0.9));
+    /* background-image: url("lol.jpg"); */
+    background-size: cover;
+    border: 0.7px solid #000;
+    border-radius: 20px;
+    color: white;
+    font-family: "Viga", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .swal2-actions {
+    margin-top: 5px;
+  }
+
+  .swal2-modal button {
+    padding: 3px 10px;
+  }
+
+  .swal2-modal input {
+    background: #fff;
+    /* background: url("lol.jpg");
+      background-size: cover; */
+    color: #000;
+    border-radius: 8px;
+  }
+
+  .swal2-styled.swal2-confirm {
+    color: #000;
+  }
+
+  .swal2-styled.swal2-cancel {
+    color: #000;
+  }
+
+  .swal2-html-container {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  body {
+    background-image: url("https://i.pinimg.com/564x/b9/43/12/b94312d91966017ffac068460efce98b.jpg");
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  body::before {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    content: "\00A9  Iking Lalusu";
+    color: #fff;
+    opacity: 0.4;
+    font-size: 15px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -42px;
+  }
+
+  .body {
+    display: none;
+  }
+
+  .container {
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    position: relative;
+  }
+
+  @keyframes anime {
+    0% {
+      transform: translate(0, 10px);
+    }
+
+    50% {
+      transform: translate(0, 25px);
+    }
+
+    100% {
+      transform: translate(0, 10px);
+    }
+  }
+
+  .container .ganti {
+    display: none;
+  }
+
+  .container .kt1 {
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+    font-size: 18px;
+  }
+
+  .container .kt2 {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border: 2px dotted solid;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+    color: #fff;
+  }
+
+  .container .kt3 {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border: 2px dotted solid;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+    color: #fff;
+  }
+
+  .container .kt4 {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border: 2px dotted solid;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+    color: #fff;
+  }
+
+  .container .kt5 {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border: 2px dotted solid;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+    color: #fff;
+  }
+
+  .container blockquote {
+    margin: 0 10px;
+    padding: 20px 30px;
+    border: 1px dashed white;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .btn {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    animation-duration: 2s;
+    font-size: 12px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    background: rgba(69, 59, 42, 0.9);
+    opacity: 0;
+    transition: all 2s ease;
+  }
+
+  .btn-t {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    animation-duration: 2s;
+    font-size: 12px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    opacity: 0;
+    transition: all 2s ease;
+  }
+
+  @keyframes true {
+    0% {
+      transform: translate(-50px, 0);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes false {
+    0% {
+      transform: translate(50px, 0);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  .btn:hover {
+    transform: scale(110%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  @media (min-width: 0px) {
+    .container .ganti {
+      width: 100px;
+      height: 100px;
+    }
+
+    .container .ttp {
+      width: 120px;
+      height: 100px;
+    }
+  }
+
+  @media (min-width: 320px) {
+    .container .ganti {
+      width: 120px;
+      height: 120px;
+    }
+
+    .container .ttp {
+      width: 140px;
+      height: 120px;
+    }
+  }
+
+  @media (min-width: 375px) {
+    .container .ganti {
+      width: 130px;
+      height: 130px;
+    }
+
+    .container .ttp {
+      width: 150px;
+      height: 130px;
+    }
+  }
+
+  @media (min-width: 425px) {
+    .container .ganti {
+      width: 140px;
+      height: 140px;
+    }
+
+    .container .ttp {
+      width: 160px;
+      height: 140px;
+    }
+  }
+
+  @media (min-width: 500px) {
+    .container .ganti {
+      width: 150px;
+      height: 150px;
+    }
+
+    .container .ttp {
+      width: 170px;
+      height: 150px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container blockquote {
+      margin: 0 40px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container blockquote {
+      margin: 0 50px;
+    }
+  }
+</style>
+
+<body>
+  <div class="body">
+    <div class="container text-center">
+      <img src="https://c.tenor.com/kMbsomn0-iUAAAAi/peach-cat.gif" alt="" width="180px" height="160px"
+        class="ttp mt-3 mb-4" />
+
+      <img class="ganti mt-3 mb-4" width="160px" height="160px"
+        src="https://c.tenor.com/bUw9MvHlREoAAAAi/tkthao219-peach.gif" alt="" />
+      <h4 class="kt1 mb-5"></h4>
+      <blockquote>
+        <p class="kt2"></p>
+        <p class="kt3"></p>
+        <p class="kt4"></p>
+        <p class="kt5"></p>
+
+      </blockquote>
+      <button type="button" onclick="jwb();" class="btn text-center justify-content-center mt-3 text-white">
+        <i class="bi bi-chat-text-fill"> </i>
+        Jawabnya disini
+      </button>
+    </div>
+  </div>
+
+  <script>
+    async function play() {
+      var audio = new Audio("song/beatiful.mp3");
+      audio.play();
+      audio.loop = true;
+      audio.addEventListener(
+        "ended",
+        function () {
+          this.currentTime = 0;
+          this.play();
+        },
+        false
+      );
+    }
+    const swalst = Swal.mixin({
+      allowOutsideClick: false,
+      showConfirmButton: true,
+      showCancelButton: false,
+    });
+    const swalss = Swal.mixin({
+      allowOutsideClick: false,
+      showConfirmButton: true,
+      showCancelButton: true,
+    });
+    const swalsy = Swal.mixin({
+      confirmButtonText: "Iy",
+      allowOutsideClick: false,
+    });
+    const swals = Swal.mixin({
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      timer: 2500,
+    });
+    var i = 0,
+      text;
+    text = "";
+    function ketik() {
+      if (i < text.length) {
+        document.querySelector("h4").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(ketik, 100);
+      }
+      if (i == text.length) {
+        ketikk();
+      }
+    }
+    var u = 0,
+      text2;
+    text2 = "";
+    function ketikk() {
+      if (u < text2.length) {
+        document.querySelector(".kt2").innerHTML += text2.charAt(u);
+        u++;
+        setTimeout(ketikk, 200);
+      }
+      if (u == text2.length) {
+        ketikkk();
+      }
+    }
+    var e = 0,
+      text3;
+    text3 = "";
+    function ketikkk() {
+      if (e < text3.length) {
+        document.querySelector(".kt3").innerHTML += text3.charAt(e);
+        e++;
+        setTimeout(ketikkk, 200);
+      }
+
+      if (e == text3.length) {
+        ketikkkk();
+      }
+    }
+
+    var a = 0,
+      text4;
+    text4 = "";
+    function ketikkkk() {
+      if (a < text4.length) {
+        document.querySelector(".kt4").innerHTML += text4.charAt(a);
+        a++;
+        setTimeout(ketikkkk, 200);
+      }
+      if (a == text4.length) {
+        ketikkkkk()
+      }
+    }
+    var o = 0,
+      text5;
+    text5 = "";
+    function ketikkkkk() {
+      if (o < text5.length) {
+        document.querySelector(".kt5").innerHTML += text5.charAt(o);
+        o++;
+        setTimeout(ketikkkkk, 200);
+      }
+
+      if (o == text5.length) {
+        document.querySelector(".btn").style =
+          "opacity:1;animation-name:true;";
+        document.querySelector(".container").style = "animation-name:anime";
+        tiws();
+        swit();
+      }
+    }
+
+
+
+    function showDiv() {
+      document.querySelector(".body").style.display = "block";
+    }
+    function swit() {
+      document.querySelector(".ganti").style.display = "inline";
+    }
+    function tiws() {
+      document.querySelector(".ttp").style.display = "none";
+    }
+
+    async function mulai() {
+      const {value: nama} = await swalst.fire({
+        title: "Isi Nama Dulu!",
+        input: "text",
+        confirmButtonText: "Lanjut",
+        confirmButtonColor: "#456572",
+      });
+      if (nama && nama.length < 11) {
+        prtnyaan();
+        window.nama = nama;
+      } else {
+        await Swal.fire({
+          text: "Isi nama dulu / tbisa lebe dari 10 huruf!",
+          confirmButtonColor: "#456572",
+        });
+        mulai();
+      }
+    }
+
+    async function prtnyaan() {
+      const {value: saya} = await swalst.fire({
+        title: "Tebak saya sapa!",
+        input: "text",
+        confirmButtonText: "Lanjut",
+        confirmButtonColor: "#456572",
+        backdrop: `rgba(0,0,0,.3)`,
+      });
+      if (saya && saya.length < 11) {
+        window.saya = saya;
+        kuis();
+      } else {
+        await Swal.fire({
+          text: "Tebak dulu / tbisa lebeh dari 10 huruf!",
+          confirmButtonColor: "#456572",
+        });
+        prtnyaan();
+        play();
+      }
+    }
+
+    async function kuis() {
+      await swals.fire({
+        text: `Maaf ${saya} so ba ganggu waktunya ${nama}`,
+        imageUrl: "https://c.tenor.com/yLPF2ku83OoAAAAi/peach-emm.gif",
+        imageWidth: 120,
+        imageHeight: 110,
+      });
+      await swals.fire({
+        text: `Btw makasih sudah mau buka akan`,
+        imageUrl: "https://c.tenor.com/1-GJkh8K6doAAAAi/mochi-mochimochi.gif",
+        imageWidth: 110,
+        imageHeight: 110,
+      });
+      await swalst.fire({
+        text: `Skrg ${nama} liat ini ee!`,
+        confirmButtonText: "OK",
+        confirmButtonColor: "#456572",
+        imageUrl: "https://c.tenor.com/t19OWaRdv7oAAAAj/cute-head-pat.gif",
+        imageWidth: 100,
+        imageHeight: 110,
+      });
+      showDiv();
+      text = `Spesial For ${nama}, ❤`;
+      text2 = `Skali lagi makasih ${nama} sudah mau buka akan. `;
+      text3 = `${nama} tau tidak bahagia itu kalo kamu dan aku menjadi kita 🙈 `;
+      text4 = `${saya} boleh kirim CV sama ${nama}? Soalnya ${saya} mau ngelamar tapi bukan untuk kerja tapi jadi pacar 🙈.`
+      text5 = `${nama} mau pacaran dn ${saya}?`
+      ketik();
+      play();
+    }
+    mulai();
+
+    async function jwb() {
+      var {isConfirmed: answer} = await swalss.fire({
+        text: `Jawab dong!`,
+        cancelButtonColor: "#fd0000",
+        confirmButtonColor: "#00aaff",
+        confirmButtonText: "Mau",
+        cancelButtonText: "Tidak Mau",
+      });
+      if (answer) {
+        await swals.fire({
+          text: `I love you more ${nama}`,
+          imageUrl: "https://c.tenor.com/5gdedXcVBgYAAAAi/pat-hug.gif",
+          imageHeight: 135,
+          imageWidth: 120,
+        });
+        window.location = `https://wa.me/+6281543270363?text=Iyee ${nama} mau pacaran dn ${saya}`;
+      } else {
+        await swals.fire({
+          text: `Yahhh nt lagi dehh`,
+          imageUrl: "https://c.tenor.com/3CW3mh2eFewAAAAi/peachandgoma.gif",
+          imageHeight: 120,
+          imageWidth: 120,
+        });
+        window.location = `https://wa.me/+6281543270363?text=Maaf ${saya} ee ${nama} tbisa`;
+      }
+    }
+  </script>
+</body>
+
+</html>
